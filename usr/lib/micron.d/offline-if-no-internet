@@ -1,0 +1,1 @@
+*/5 4-22 * * * /lib/gluon/wlan_checks/offline-if-no-internet.sh

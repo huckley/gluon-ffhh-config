@@ -1,0 +1,10 @@
+#!/bin/bash
+ssh-add
+hosts="pfad kiwi01"
+
+for file in `find  -mindepth 2 -type f |sed s/'^\.'//g |grep -v ^/.git`; do
+  for host in $hosts; do
+    ssh root@$host.ffhh mkdir -p `dirname $file`
+    scp .$file root@$host.ffhh:$file
+  done
+done
